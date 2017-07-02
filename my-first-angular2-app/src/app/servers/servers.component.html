@@ -1,13 +1,20 @@
 <div class="containe">
     <div class="row">
+        <div class="col-xs-12">
+            <label for="">Server Name</label>
+            <input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+            <p>{{serverName}}</p>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-xs-6">
-            <input type="checkbox" id="chkAllowNewServer" [(ngModel)]="allowNewServer">
+            <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+        </div>
+        <div class="col-xs-6">
+            <input type="checkbox" id="chkAllowNewServer" [(ngModel)]="allowNewServer" />
             <label for="chkAllowNewServer">Allow New Server</label>
             <!--<div [innerText]="allowNewServer"></div>-->
             <p>{{ serverCreationStatus }}</p>
-        </div>
-        <div class="col-xs-6">
-            <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
         </div>
     </div>
 </div>
