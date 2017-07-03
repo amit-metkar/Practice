@@ -1,0 +1,21 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="txtUserName">User Name: </label>
+                    <input type="text" id="txtUserName" [(ngModel)]="userName" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>{{userName}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <button (click)="userName='';" class="btn btn-primary" [disabled]="userName==''">Submit</button>
+        </div>
+    </div>
+</div>
