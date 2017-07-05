@@ -15,7 +15,11 @@
             <input type="checkbox" id="chkAllowNewServer" [(ngModel)]="allowNewServer" />
             <label for="chkAllowNewServer">Allow New Server</label>
             <!--<div [innerText]="allowNewServer"></div>-->
-            <p *ngIf="isServerCreated"> {{ serverCreationStatus }}</p>
+            <p *ngIf="isServerCreated; else noServer">Server was created! Name is {{serverName }}</p>
+            <ng-template #noServer>
+                <p *ngIf="!isServerCreated">No server is created!</p>
+            </ng-template>
+            <!--<p *ngIf="!isServerCreated">No server is created!</p>-->
         </div>
     </div>
 </div>
