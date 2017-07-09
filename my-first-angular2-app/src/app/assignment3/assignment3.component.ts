@@ -23,7 +23,7 @@ export class Assignment3Component implements OnInit {
   }
 
   getBackgroundColor(count) {
-    if(count > 4)
+    if(count >= 4)
     {
       return 'blue';
     }
